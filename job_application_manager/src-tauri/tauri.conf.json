@@ -12,7 +12,28 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "path": {
+        "all": true
+      },
+      "fs": {
+        "scope": [
+          "$DOCUMENT/*"
+        ],
+        "all": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true
+      },
+      "dialog": {
+        "message": true,
+        "open": true,
+        "save": true
+      }
     },
     "bundle": {
       "active": true,
