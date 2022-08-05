@@ -53,10 +53,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="grid 2xl:grid-cols-9 lg:grid-cols-7 grid-cols-1">
-        <JobForm saveApplication={saveApplication}></JobForm>
-        <JobsList data={applicationData}></JobsList>
-      </div>
+      <JobForm saveApplication={saveApplication}></JobForm>
+      <JobsList data={applicationData}></JobsList>
     </div>
   );
 }

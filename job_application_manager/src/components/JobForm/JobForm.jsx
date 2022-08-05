@@ -8,7 +8,7 @@ function JobForm({ saveApplication }) {
   const [note, setNote] = useState("");
 
   return (
-    <form className="mb-10 z-10 w-96 2xl:col-span-3 lg:col-span-3 md:col-span-2 sm:col-span-1">
+    <form className="mb-10 z-10 w-96 lg:fixed">
       <div className="card w-96 bg-accent text-black shadow-xl">
         <div className="card-body">
           <h2 className="card-title mb-3">Job Application Manager</h2>

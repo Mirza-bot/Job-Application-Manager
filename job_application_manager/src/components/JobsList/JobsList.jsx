@@ -1,8 +1,8 @@
 function JobsList({ data }) {
   if (data !== undefined && data !== null) {
     return (
-      <div className="2xl:col-span-6 xl:col-span-4 lg:col-span-4 md:col-span-4 sm:col-span-1 z-0">
-        <div className="overflow-x-auto">
+      <div className="z-0 tablewidth float-right">
+        <div className="overflow-y-scroll">
           <table className="table w-full">
             <thead>
               <tr>
@@ -10,6 +10,7 @@ function JobsList({ data }) {
                 <th>Job Title</th>
                 <th>Company</th>
                 <th>Application Date</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -23,10 +24,12 @@ function JobsList({ data }) {
                       {x.applicationDate
                         ? x.applicationDate.split("-").reverse().join(".")
                         : false}
-                      <button className="float-right btn p-2">
+                    </td>
+                    <td>
+                      <button className="float-right btn p-3">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
+                          className="h-5 w-5"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
