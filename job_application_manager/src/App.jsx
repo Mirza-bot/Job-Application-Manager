@@ -31,7 +31,6 @@ function App() {
       },
     ];
     const newData = [...applicationData, ...newApplication];
-    setApplicationData(newData);
     saveData(newData);
   };
 
@@ -40,8 +39,8 @@ function App() {
     await writeTextFile("JobApplicationData.txt", JSON.stringify(data), {
       dir: BaseDirectory.Document,
     });
-    await open(documentDirPath);
     message("data Saved!!");
+    readData();
   };
 
   const readData = async () => {
@@ -49,7 +48,7 @@ function App() {
       dir: BaseDirectory.Document,
     });
     data = [JSON.parse(data)];
-    setApplicationData(data);
+    setApplicationData(...data);
   };
 
   return (

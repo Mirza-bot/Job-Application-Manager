@@ -81,14 +81,12 @@ function JobForm({ saveApplication }) {
             <button
               type="button"
               onClick={() => {
-                console.log(
-                  saveApplication(
-                    jobTitle,
-                    company,
-                    companyLink,
-                    applicationDate,
-                    note
-                  )
+                saveApplication(
+                  jobTitle,
+                  company,
+                  companyLink,
+                  applicationDate,
+                  note
                 );
               }}
               className="btn btn-seconadry"
