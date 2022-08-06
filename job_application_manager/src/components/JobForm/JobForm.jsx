@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { message } from "@tauri-apps/api/dialog";
 
 function JobForm({ saveApplication }) {
   const [jobTitle, setJobTitle] = useState("");
@@ -24,6 +25,7 @@ function JobForm({ saveApplication }) {
                   className="float-right"
                   type="text"
                   name="job_title"
+                  maxLength={"30"}
                 />
               </li>
               <li className="mb-3">
@@ -36,6 +38,7 @@ function JobForm({ saveApplication }) {
                   className="float-right"
                   type="text"
                   name="company_title"
+                  maxLength={"30"}
                 />
               </li>
               <li className="mb-3">
@@ -81,13 +84,22 @@ function JobForm({ saveApplication }) {
             <button
               type="button"
               onClick={() => {
-                saveApplication(
-                  jobTitle,
-                  company,
-                  companyLink,
-                  applicationDate,
-                  note
-                );
+                if (
+                  jobTitle !== "" &&
+                  company !== "" &&
+                  applicationDate !== ""
+                ) {
+                  saveApplication(
+                    jobTitle,
+                    company,
+                    companyLink,
+                    applicationDate,
+                    note
+                  );
+                } else
+                  message(
+                    "Job title, company and application date are required!"
+                  );
               }}
               className="btn btn-seconadry"
             >

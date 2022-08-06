@@ -7,8 +7,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "job_application_manager",
-    "version": "0.1.0"
+    "productName": "Job Application Manager",
+    "version": "1.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -22,15 +22,9 @@
         "scope": [
           "$DOCUMENT/*"
         ],
-        "all": true,
+        "all": false,
         "readFile": true,
-        "writeFile": true,
-        "readDir": true,
-        "copyFile": true,
-        "createDir": true,
-        "removeDir": true,
-        "removeFile": true,
-        "renameFile": true
+        "writeFile": true
       },
       "dialog": {
         "message": true,
@@ -53,7 +47,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "at.malkocmirza.jobapplicationmanager",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -79,7 +73,7 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "fullscreen": true,
         "height": 600,
         "resizable": true,
         "title": "JAM - Job Application Manager",

@@ -7,20 +7,24 @@ function Modal({ modalId, modalData }) {
       <div className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg mb-3">Application Details</h3>
-          <ul className="w-64">
+          <ul className="w-96">
             <li className="my-1">
               <span className="font-bold mr-4">Job Title:</span>
-              <span className="float-right">{modalData.jobTitle}</span>
+              <span className="float-right text-ellipsis overflow-hidden w-60">
+                {modalData.jobTitle}
+              </span>
             </li>
             <li className="my-1">
               <span className="font-bold mr-4">Company:</span>
-              <span className="float-right">{modalData.company}</span>
+              <p className="float-right text-ellipsis overflow-hidden w-60">
+                {modalData.company}
+              </p>
             </li>
             <li className="my-1">
               <span className="font-bold mr-4">Company Link:</span>
               <a
                 href={modalData.companyLink}
-                className="float-right text-blue-400"
+                className="float-right text-blue-400 text-ellipsis overflow-hidden w-60"
                 target={"_blank"}
               >
                 {modalData.companyLink}
@@ -35,7 +39,7 @@ function Modal({ modalId, modalData }) {
             <li className="my-4">
               <span className="font-bold">Note:</span>
               <br />
-              <span>{modalData.note}</span>
+              <p className="w-96 whitespace-normal">{modalData.note}</p>
             </li>
           </ul>
           <div className="modal-action">

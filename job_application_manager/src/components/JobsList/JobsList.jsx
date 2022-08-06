@@ -1,9 +1,15 @@
-import { PaperClipIcon, TrashIcon } from "@heroicons/react/solid";
+import {
+  PaperClipIcon,
+  TrashIcon,
+  ArrowLeftIcon,
+  DocumentRemoveIcon,
+} from "@heroicons/react/solid";
 
 import Modal from "../Modal/Modal";
 
 function JobsList({ data, deleteApplication }) {
-  if (data !== undefined && data !== null) {
+  console.log(data);
+  if (data !== undefined && data !== null && data[0]) {
     return (
       <div className="z-0 tablewidth float-right">
         <div className="overflow-y-scroll">
@@ -51,7 +57,15 @@ function JobsList({ data, deleteApplication }) {
         </div>
       </div>
     );
-  } else return <div>No Data Found</div>;
+  } else
+    return (
+      <div className="md:absolute left-1/4 md:top-1/3 mt-24">
+        <div className="ml-96">
+          <DocumentRemoveIcon className="w-10 h-10 ml-20 mb-5"></DocumentRemoveIcon>
+          <h1>No Job applications found.</h1>
+        </div>
+      </div>
+    );
 }
 
 export default JobsList;
