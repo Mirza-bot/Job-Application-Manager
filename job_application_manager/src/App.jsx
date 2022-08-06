@@ -43,6 +43,11 @@ function App() {
     readData();
   };
 
+  const deleteData = (application) => {
+    const newArray = applicationData.filter((x) => x !== application);
+    setApplicationData(newArray);
+  };
+
   const readData = async () => {
     let data = await readTextFile("JobApplicationData.txt", {
       dir: BaseDirectory.Document,
@@ -54,7 +59,10 @@ function App() {
   return (
     <div className="App">
       <JobForm saveApplication={saveApplication}></JobForm>
-      <JobsList data={applicationData}></JobsList>
+      <JobsList
+        data={applicationData}
+        deleteApplication={deleteData}
+      ></JobsList>
     </div>
   );
 }

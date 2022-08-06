@@ -1,9 +1,13 @@
-function JobsList({ data }) {
+import { PaperClipIcon, TrashIcon } from "@heroicons/react/solid";
+
+import Modal from "../Modal/Modal";
+
+function JobsList({ data, deleteApplication }) {
   if (data !== undefined && data !== null) {
     return (
       <div className="z-0 tablewidth float-right">
         <div className="overflow-y-scroll">
-          <table className="table w-full">
+          <table className="table table-zebra w-full">
             <thead>
               <tr>
                 <th></th>
@@ -26,22 +30,18 @@ function JobsList({ data }) {
                         : false}
                     </td>
                     <td>
-                      <button className="float-right btn p-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
+                      <div className="float-right">
+                        <label htmlFor={index} className=" btn p-3 m-1">
+                          <PaperClipIcon className="h-5 w-5"></PaperClipIcon>
+                        </label>
+                        <button
+                          className=" btn p-3 m-1"
+                          onClick={() => deleteApplication(x)}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                          />
-                        </svg>
-                      </button>
+                          <TrashIcon className="h-5 w-5"></TrashIcon>
+                        </button>
+                        <Modal modalId={index} modalData={x}></Modal>
+                      </div>
                     </td>
                   </tr>
                 );
