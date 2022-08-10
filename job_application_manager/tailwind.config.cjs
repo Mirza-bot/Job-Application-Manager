@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/JobForm/JobForm.jsx",
     "./src/components/JobsList/JobsList.jsx",
     "./src/components/Modal/Modal.jsx",
+    "./src/components/Modal/DangerModal.jsx",
   ],
   theme: {
     extend: {},

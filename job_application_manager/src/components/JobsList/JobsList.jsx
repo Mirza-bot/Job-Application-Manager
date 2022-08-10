@@ -1,11 +1,10 @@
 import {
   PaperClipIcon,
   TrashIcon,
-  ArrowLeftIcon,
   DocumentRemoveIcon,
 } from "@heroicons/react/solid";
-
-import Modal from "../Modal/Modal";
+import DangerModal from "../Modal/DangerModal";
+import DetailsModal from "../Modal/DetailsModal";
 
 function JobsList({ data, deleteApplication }) {
   console.log(data);
@@ -40,13 +39,22 @@ function JobsList({ data, deleteApplication }) {
                         <label htmlFor={index} className=" btn p-3 m-1">
                           <PaperClipIcon className="h-5 w-5"></PaperClipIcon>
                         </label>
-                        <button
+                        <label
                           className=" btn p-3 m-1"
-                          onClick={() => deleteApplication(x)}
+                          htmlFor={"danger" + index}
                         >
                           <TrashIcon className="h-5 w-5"></TrashIcon>
-                        </button>
-                        <Modal modalId={index} modalData={x}></Modal>
+                        </label>
+                        <DetailsModal
+                          modalId={index}
+                          modalData={x}
+                        ></DetailsModal>
+                        <DangerModal
+                          deleteFunction={deleteApplication}
+                          target={x}
+                          company={x.company}
+                          index={index}
+                        ></DangerModal>
                       </div>
                     </td>
                   </tr>

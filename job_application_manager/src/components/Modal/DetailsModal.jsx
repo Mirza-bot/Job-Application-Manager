@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modal({ modalId, modalData }) {
+function DetailsModal({ modalId, modalData }) {
   return (
     <div>
       <input type="checkbox" id={modalId} className="modal-toggle" />
@@ -10,21 +10,21 @@ function Modal({ modalId, modalData }) {
           <ul className="w-96">
             <li className="my-1">
               <span className="font-bold mr-4">Job Title:</span>
-              <span className="float-right text-ellipsis overflow-hidden w-60">
+              <span className="text-right float-right text-ellipsis overflow-hidden w-60">
                 {modalData.jobTitle}
               </span>
             </li>
             <li className="my-1">
               <span className="font-bold mr-4">Company:</span>
-              <p className="float-right text-ellipsis overflow-hidden w-60">
+              <span className="text-right float-right text-ellipsis overflow-hidden w-60">
                 {modalData.company}
-              </p>
+              </span>
             </li>
             <li className="my-1">
               <span className="font-bold mr-4">Company Link:</span>
               <a
                 href={modalData.companyLink}
-                className="float-right text-blue-400 text-ellipsis overflow-hidden w-60"
+                className="text-right float-right text-blue-400 w-60"
                 target={"_blank"}
               >
                 {modalData.companyLink}
@@ -53,4 +53,4 @@ function Modal({ modalId, modalData }) {
   );
 }
 
-export default Modal;
+export default DetailsModal;
